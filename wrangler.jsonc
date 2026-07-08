@@ -16,6 +16,8 @@
     "binding": "ASSETS",
     "directory": ".open-next/assets",
   },
+  "d1_databases": [{ "binding": "DATABASE" }],
+  "kv_namespaces": [{ "binding": "KV" }],
   "images": {
     // Enable image optimization
     // see https://opennext.js.org/cloudflare/howtos/image
