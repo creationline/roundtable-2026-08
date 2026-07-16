@@ -1,0 +1,41 @@
+{
+	"name": "roundtable-2026-08 (AI-DLC Workshop)",
+
+	// image を指定せず、GitHub Codespaces の「既定の開発コンテナイメージ」(universal) を使用する。
+	// 既定イメージ由来のコンテナ本体は Codespaces のストレージ無料枠(15GB)にカウントされない
+
+	// コンテナ作成後に Claude Code をグローバルインストールし、依存パッケージを導入
+	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && npm install",
+
+	// Claude Code の認証情報。）
+	"remoteEnv": {
+		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
+		"ANTHROPIC_BASE_URL": "${localEnv:ANTHROPIC_BASE_URL}"
+	},
+
+	// next dev のポートを転送
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js dev server",
+			"onAutoForward": "notify"
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"anthropic.claude-code",
+				"dbaeumer.vscode-eslint",
+				"bradlc.vscode-tailwindcss",
+				"esbenp.prettier-vscode",
+				"cloudflare.cloudflare-workers-bindings-extension"
+			],
+			"settings": {
+				"files.associations": {
+					"wrangler.json": "jsonc"
+				}
+			}
+		}
+	}
+}
