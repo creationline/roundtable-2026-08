@@ -4,10 +4,14 @@
 	// image を指定せず、GitHub Codespaces の「既定の開発コンテナイメージ」(universal) を使用する。
 	// 既定イメージ由来のコンテナ本体は Codespaces のストレージ無料枠(15GB)にカウントされない
 
-	// コンテナ作成後に Claude Code をグローバルインストールし、依存パッケージを導入
-	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && npm install",
+	// プロジェクト依存の導入(prebuild でキャッシュ・package.json 更新時に再実行)
+	"updateContentCommand": "npm install",
 
-	// Claude Code の認証情報。）
+	// Claude Code はネイティブインストーラで導入(公式推奨・Node.js 非依存・署名付きバイナリ・自動更新あり)
+	// 旧 devcontainer-feature は Node18+npm の旧方式で1年以上未更新のため使用しない
+	"postCreateCommand": "curl -fsSL https://claude.ai/install.sh | bash",
+
+	// Claude Code の認証情報
 	"remoteEnv": {
 		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
 		"ANTHROPIC_BASE_URL": "${localEnv:ANTHROPIC_BASE_URL}"
@@ -30,12 +34,7 @@
 				"bradlc.vscode-tailwindcss",
 				"esbenp.prettier-vscode",
 				"cloudflare.cloudflare-workers-bindings-extension"
-			],
-			"settings": {
-				"files.associations": {
-					"wrangler.json": "jsonc"
-				}
-			}
+			]
 		}
 	}
 }
