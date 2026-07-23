@@ -1,3 +1,8 @@
 {
-  "apiKeyHelper": "echo $ANTHROPIC_API_KEY"
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "cloudflare@claude-plugins-official": true
+  }
 }
