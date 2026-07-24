@@ -16,8 +16,18 @@
     "binding": "ASSETS",
     "directory": ".open-next/assets",
   },
-  "d1_databases": [{ "binding": "DATABASE" }],
-  "kv_namespaces": [{ "binding": "KV" }],
+  "d1_databases": [
+    {
+      "binding": "DATABASE",
+      "database_id": "c337a052-ad12-4abd-ae3b-3808fcbfd717",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "ac0de2efda5342e89bec83a332976edf",
+    },
+  ],
   "images": {
     // Enable image optimization
     // see https://opennext.js.org/cloudflare/howtos/image
@@ -38,16 +48,18 @@
       "enabled": true,
       "head_sampling_rate": 1,
       "persist": true,
-      "invocation_logs": true
+      "invocation_logs": true,
     },
     "traces": {
       "enabled": true,
       "persist": true,
-      "head_sampling_rate": 1
-    }
+      "head_sampling_rate": 1,
+    },
   },
   "upload_source_maps": true,
-  "placement": {  "mode": "smart" },
+  "placement": {
+    "mode": "smart",
+  },
   /**
    * Bindings
    * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
