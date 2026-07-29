@@ -1,4 +1,6 @@
 {
+  "model": "sonnet",
+  "language": "Japanese",
   "enabledPlugins": {
     "context7@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,

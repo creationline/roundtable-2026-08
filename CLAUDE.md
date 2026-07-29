@@ -11,6 +11,13 @@ Output language: See `.aidlc/config.json` for `language` setting.
 When there is ambiguity, branching, or a choice required, always use **askQuestionTool** to confirm with the user before proceeding.
 (Do not proceed based on assumptions.)
 
+## Infrastructure Environment
+- Platform: Cloudflare
+  - Compute: Workers
+  - Database: D1
+- Development Environment: GitHub Codespaces
+- Detailed configuration (DB name/ID, KV namespace, bindings, etc.): see `wrangler.jsonc`
+
 ## 特別ルール
 今回はワークショップです。AI-DLCのフローを実行する際に、非機能の考慮は不要です。
 PoCとしてスピーディにアプリケーションの実装を行うことを優先してください。
