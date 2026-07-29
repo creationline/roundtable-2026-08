@@ -1,5 +1,8 @@
 {
 	"files.associations": {
 		"wrangler.json": "jsonc"
+	},
+	"workbench.editorAssociations": {
+		"*.md": "vscode.markdown.preview.editor"
 	}
 }
