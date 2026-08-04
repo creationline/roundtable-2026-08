@@ -20,6 +20,8 @@
     {
       "binding": "DATABASE",
       "database_id": "c337a052-ad12-4abd-ae3b-3808fcbfd717",
+      "migrations_dir": "./migrations",
+      "migrations_pattern": "migrations/*.sql",
     },
   ],
   "kv_namespaces": [
